@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COLDNESS</title>
     <style>
-       body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
              text-align: center;
@@ -196,6 +196,7 @@ header img {
     flex-shrink: 0;
 }
 
+
     </style>
 </head>
 <body>
@@ -212,17 +213,20 @@ header img {
         </ul>
     </nav>
     
-    <h1>PARADISE</h1>
-    <div class="carrusel" id="carrusel">
-        <button class="boton izquierda" onclick="moverCarrusel(-1)">&#9664;</button>
+    <h1>paradise</h1>
+    <div class="carrusel">
+    <div class="carrusel-contenedor">
         <img src="ParaH1.jpeg" alt="Camisa 1">
         <img src="ParaM1.jpeg" alt="Camisa 2">
         <img src="ParaH2.jpeg" alt="Camisa 3">
         <img src="ParaM2.jpeg" alt="Camisa 4">
         <img src="ParaH3.jpeg" alt="Camisa 5">
         <img src="ParaM3.jpeg" alt="Camisa 6">
-        <button class="boton derecha" onclick="moverCarrusel(1)">&#9654;</button>
     </div>
+    <button class="boton izquierda" onclick="moverCarrusel(-1)">&#9664;</button>
+    <button class="boton derecha" onclick="moverCarrusel(1)">&#9654;</button>
+</div>
+
     <section id="especificacion">
         <div class="especificaciones">
             <h2>Descripción de la Camisa</h2>
@@ -250,23 +254,22 @@ header img {
     <main>
         <section id="inicio">
         </section>
-        
         <ul>
             <div class="container">
-                <section id="contacto">
-                    <h2>Contacto</h2>
-                    <p>Puedes contactarnos en <a href="mailto:coldnessmx@gmail.com">coldnessmx@gmail.com</a></p>
-                    <br>
-                    <a href="https://www.instagram.com/coldness_mx?igsh=NXNwdWVrZngyeG1q" target="_blank">
-                        <button class="botonPI">Visítanos en Instagram</button>
-                    </a>
-                </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarnos en <a href="mailto:coldnessmx@gmail.com">coldnessmx@gmail.com</a></p>
+            <br>
+            <a href="https://www.instagram.com/coldness_mx?igsh=NXNwdWVrZngyeG1q" target="_blank">
+                <button class="botonPI">Visítanos en Instagram</button>
+            </a>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 COLDNESS. Todos los derechos reservados.</p>
     </footer>
     <script>
-      // 📌 Variables globales
+       // 📌 Variables globales
 let indice = 0;
 const carruselContenedor = document.querySelector(".carrusel-contenedor");
 const imagenes = document.querySelectorAll(".carrusel-contenedor img");
@@ -304,6 +307,7 @@ carruselContenedor.addEventListener("touchend", () => {
         moverCarrusel(-1); // Desliza a la izquierda
     }
 });
+
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 function toggleCarrito() {
