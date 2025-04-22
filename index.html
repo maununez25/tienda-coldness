@@ -1,239 +1,171 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLDNESS</title>
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-        }
+    cursor: pointer;
+    font-size: 18px;
+}
 
-        header {
-            background-color: #82baf1;
-            color: black;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            padding: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .product {
-            background-color: #fff;
-            padding: 15px;
-            margin: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #82baf1;
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a, nav ul li button {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        nav ul li a:hover, nav ul li button:hover {
-            background-color: #5db1e9;
-        }
-
-        #menu-toggle {
-            display: none;
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        footer {
-            background-color: #82baf1;
-            color: white;
-            padding: 10px;
-        }
-
-        /* Estilos del carrito */
-        .carrito { 
-            border: 1px solid #ccc; 
-            padding: 10px; 
-            position: fixed; 
-            top: 0; 
-            right: 0; 
-            width: 300px; 
-            height: 100%; 
-            background-color: white; 
-            box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
-            overflow-y: auto; 
-            z-index: 2; 
-            display: none;
-        }
-
-        /* Estilos de la barra de búsqueda */
-        #search-form {
-            display: flex;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 5px;
-            padding: 5px;
-            width: 250px;
-            margin: auto;
-        }
-
-        #search-input {
-            border: none;
-            padding: 8px;
-            width: 200px;
-            outline: none;
-        }
-
-        /* Estilos responsivos */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            #menu-toggle {
-                display: block;
-            }
-
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .product {
-                max-width: 90%;
-            }
-
-            #search-form {
-                width: 100%;
-                justify-content: center;
-            }
-        }
     </style>
 </head>
 <body>
-
-<header>
-    <h1>COLDNESS</h1>
-    <img src="coss.png">
-</header>
-
-<button id="menu-toggle">☰ Menú</button>
-<nav id="menu">
-    <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><button class="boton-carrito" onclick="toggleCarrito()"><img src="carro.png" width="25"></button></li>
-    </ul>
-</nav>
-
-<center>
-    <form id="search-form" onsubmit="buscarProducto(); return false;">
-        <input type="text" id="search-input" placeholder="Buscar productos..." autocomplete="off">
-        <button type="submit">🔍</button>
-    </form>
-</center>
-
-<main>
-    <section id="productos">
-        <h2>Productos</h2>
-        <div class="container">
-            <div class="product" data-color="negro" data-precio="500" data-categoria="corazon">
-                <h2>Eternity</h2>
-                <img src="EterM1.jpeg">
-                <p>Camisa premium color negro.</p>
-                <button class="boton" onclick="window.location.href='camisa1.html'">Ver Especificaciones</button>
-            </div>
-            <div class="product" data-color="azul" data-precio="500" data-categoria="espacio">
-                <h2>Paradise</h2>
-                <img src="ParaH1.jpeg">
-                <p>Descripción del producto 2.</p>
-                <button class="boton" onclick="window.location.href='camisa2.html'">Ver Especificaciones</button>
-            </div>
+    <header>
+       <h1></h1>
+       <img src="coss.png">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><button class="boton-carrito" onclick="toggleCarrito()"><img src="carro.png" width="25"></button></li>
+            <li></li>
+        </ul> <center>
+         <form id="search-form" onsubmit="buscarProducto(); return false;">
+            <input type="text" id="search-input" placeholder="Buscar productos..." autocomplete="off">
+            <button type="submit">🔍</button>
+        </form> </center>
+        
+    </nav>
+    <main>
+        <section id="inicio">
+            <h2>Inicio</h2>
+            <p>Explora nuestra colección de ropa de moda.</p>
+        </section>
+        <section id="productos">
+            <h2>Productos</h2>
+            <ul>
+                <div class="container">
+                    <div class="product" data-color="negro" data-precio="500" data-categoria="corazon , corazón">
+                        <h2>Eternity</h2>
+                        <center><img src="EterM1.jpeg" width="350" height="450"></center>
+                        <p>Camisa premium color negro.</p>
+                        <button class="boton" onclick="window.location.href='camisa1.html'">Ver Especificaciones</button>
+                    </div>
+                    
+                    
+                    <div class="product" data-color="azul" data-precio="500" data-categoria="espacio">
+                        <h2>Paradise</h2>
+                        <center><img src="ParaH1.jpeg" width="350" height="450"></center>
+                        <p>Descripción del producto 2.</p>
+                        <button class="boton" onclick="window.location.href='camisa2.html'">Ver Especificaciones</button>
+                    </div>
+                    <div class="product" data-color="blanca" data-precio="500" data-categoria="calavera ">
+                        <h2>Reality</h2>
+                        <center><img src="RealM1.jpeg" width="350" height="450"></center>
+                        <p>Descripción del producto 3.</p>
+                        <button class="boton" onclick="window.location.href='camisa3.html'">Ver Especificaciones</button>
+                    </div>
+                </div>
+            </ul>
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarnos en <a href="mailto:coldnessmx@gmail.com">coldnessmx@gmail.com</a></p>
+            <br>
+            <a href="https://www.instagram.com/coldness_mx?igsh=NXNwdWVrZngyeG1q" target="_blank">
+                <button class="botonPI">Visítanos en Instagram</button>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p>
+    </footer>
+    <section id="carrito" class="carrito">
+        <h2>Carrito de Compras</h2>
+        <div>
+            <ul id="lista-carrito"></ul>
+            <p>Total: $<span id="total-carrito">0.00</span></p>
+            <button class="botonP" onclick="window.location.href='pago.html'">Pagar</button>
         </div>
     </section>
+    <script>
+        let indice = 0;
+        const imagenes = document.querySelectorAll('.carrusel img');
+        function moverCarrusel(direccion) {
+            indice += direccion;
+            if (indice < 0) {
+                indice = imagenes.length - 1;
+            } else if (indice >= imagenes.length) {
+                indice = 0;
+            }
+            const desplazamiento = -indice * 480;
+            imagenes.forEach(img => {
+                img.style.transform = `translateX(${desplazamiento}px)`;
+            });
+        }
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Puedes contactarnos en <a href="mailto:coldnessmx@gmail.com">coldnessmx@gmail.com</a></p>
-        <a href="https://www.instagram.com/coldness_mx?igsh=NXNwdWVrZngyeG1q" target="_blank">
-            <button class="botonPI">Visítanos en Instagram</button>
-        </a>
-    </section>
-</main>
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        function toggleCarrito() {
+            const carrito = document.getElementById('carrito');
+            carrito.style.display = carrito.style.display === 'none' ? 'block' : 'none';
+        }
 
-<footer>
-    <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p>
-</footer>
+        function agregarAlCarrito(producto, precio, tallaId, cantidadId) {
+            const talla = document.getElementById(tallaId).value;
+            const cantidad = parseInt(document.getElementById(cantidadId).value);
+            carrito.push({ producto, precio, talla, cantidad });
+            actualizarCarrito();
+            alert("Producto agregado al carrito");
+        }
 
-<section id="carrito" class="carrito">
-    <h2>Carrito de Compras</h2>
-    <ul id="lista-carrito"></ul>
-    <p>Total: $<span id="total-carrito">0.00</span></p>
-    <button class="botonP" onclick="window.location.href='pago.html'">Pagar</button>
-</section>
+        function eliminarDelCarrito(indice) {
+            carrito.splice(indice, 1);
+            actualizarCarrito();
+        }
 
-<script>
-    document.getElementById("menu-toggle").addEventListener("click", function() {
-        let menu = document.getElementById("menu");
-        menu.style.display = menu.style.display === "block" ? "none" : "block";
-    });
+        function actualizarCarrito() {
+            const listaCarrito = document.getElementById('lista-carrito');
+            const totalCarrito = document.getElementById('total-carrito');
+            listaCarrito.innerHTML = '';
+            let total = 0;
+            carrito.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.textContent = `${item.producto} (Talla: ${item.talla}, Cantidad: ${item.cantidad}) - $${(item.precio * item.cantidad).toFixed(2)}`;
+                const botonEliminar = document.createElement('button');
+                botonEliminar.textContent = 'Eliminar';
+                botonEliminar.classList.add('boton-eliminar');
+                botonEliminar.onclick = () => eliminarDelCarrito(index);
+                li.appendChild(botonEliminar);
+                listaCarrito.appendChild(li);
+                total += item.precio * item.cantidad;
+            });
+            totalCarrito.textContent = total.toFixed(2);
+            localStorage.setItem('carrito', JSON.stringify(carrito)); // Guardar el carrito en localStorage
+        }
 
-    function buscarProducto() {
-        let input = document.getElementById("search-input").value.toLowerCase();
-        let productos = document.querySelectorAll(".product");
-
-        productos.forEach(producto => {
-            let nombre = producto.querySelector("h2").innerText.toLowerCase();
-            let descripcion = producto.querySelector("p").innerText.toLowerCase();
-            let color = producto.getAttribute("data-color").toLowerCase();
-            let categoria = producto.getAttribute("data-categoria").toLowerCase();
-
-            producto.style.display = (nombre.includes(input) || descripcion.includes(input) || color.includes(input) || categoria.includes(input)) ? "block" : "none";
+        // Cargar el carrito desde localStorage al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            actualizarCarrito();
         });
-    }
-</script>
 
+        // Ocultar el carrito al hacer clic fuera de él
+        document.addEventListener('click', function(event) {
+            const carrito = document.getElementById('carrito');
+            const botonCarrito = document.querySelector('.boton-carrito');
+            if (!carrito.contains(event.target) && !botonCarrito.contains(event.target)) {
+                carrito.style.display = 'none';
+            }
+        });
+        //barra 
+        function buscarProducto() {
+    let input = document.getElementById("search-input").value.toLowerCase();
+    let productos = document.querySelectorAll(".product");
+
+    productos.forEach(producto => {
+        let nombreProducto = producto.querySelector("h2").innerText.toLowerCase();
+        let descripcionProducto = producto.querySelector("p").innerText.toLowerCase();
+        let colorProducto = producto.getAttribute("data-color") || "";
+        let categoriaProducto = producto.getAttribute("data-categoria") || "";
+        let precioProducto = producto.getAttribute("data-precio") || "";
+
+        let coincide = nombreProducto.includes(input) || 
+                       descripcionProducto.includes(input) || 
+                       colorProducto.includes(input) || 
+                       categoriaProducto.includes(input) || 
+                       precioProducto.includes(input);
+
+        producto.style.display = coincide ? "block" : "none";
+    });
+}
+
+    </script>
 </body>
 </html>
