@@ -177,20 +177,24 @@ header img {
     }
 }
 .carrusel {
-    display: flex;
-    overflow: hidden;
+    position: relative;
     width: 100%;
     max-width: 480px;
+    overflow: hidden;
     margin: auto;
-    position: relative;
 }
 
-.carrusel img {
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%;
+}
+
+.carrusel-contenedor img {
     width: 100%;
-    height: auto;
-    object-fit: cover;
     flex-shrink: 0;
 }
+
 
     </style>
 </head>
@@ -209,15 +213,18 @@ header img {
     </nav>
     
     <h1>ETERNITY COLDNESS</h1>
-    <div class="carrusel" id="carrusel">
-        <button class="boton izquierda" onclick="moverCarrusel(-1)">&#9664;</button>
+    <div class="carrusel">
+    <div class="carrusel-contenedor">
         <img src="EterM1.jpeg" alt="Camisa 1">
         <img src="EterH1.jpeg" alt="Camisa 2">
         <img src="EterM2.jpeg" alt="Camisa 3">
         <img src="EterH2.jpeg" alt="Camisa 4">
         <img src="EterM3.jpeg" alt="Camisa 5">
-        <button class="boton derecha" onclick="moverCarrusel(1)">&#9654;</button>
     </div>
+    <button class="boton izquierda" onclick="moverCarrusel(-1)">&#9664;</button>
+    <button class="boton derecha" onclick="moverCarrusel(1)">&#9654;</button>
+</div>
+
     <section id="especificacion">
         <div class="especificaciones">
             <h2>Descripción de la Camisa</h2>
@@ -261,29 +268,13 @@ header img {
         <p>&copy; 2025 COLDNESS. Todos los derechos reservados.</p>
     </footer>
     <script>
-       const carrusel = document.querySelector(".carrusel");
-let startX = 0;
-let moveX = 0;
+       // 📌 Variables globales
 let indice = 0;
+const carruselContenedor = document.querySelector(".carrusel-contenedor");
+const imagenes = document.querySelectorAll(".carrusel-contenedor img");
 
-carrusel.addEventListener("touchstart", (event) => {
-    startX = event.touches[0].clientX;
-});
-
-carrusel.addEventListener("touchmove", (event) => {
-    moveX = event.touches[0].clientX;
-});
-
-carrusel.addEventListener("touchend", () => {
-    if (startX > moveX + 50) {
-        moverCarrusel(1); // Desliza a la derecha
-    } else if (startX < moveX - 50) {
-        moverCarrusel(-1); // Desliza a la izquierda
-    }
-});
-
+// 📌 Función para mover el carrusel manualmente (botón)
 function moverCarrusel(direccion) {
-    const imagenes = document.querySelectorAll(".carrusel img");
     indice += direccion;
 
     if (indice < 0) {
@@ -292,9 +283,29 @@ function moverCarrusel(direccion) {
         indice = 0;
     }
 
-    const desplazamiento = -indice * carrusel.clientWidth;
-    carrusel.style.transform = `translateX(${desplazamiento}px)`;
+    const desplazamiento = -indice * 100; // Movimiento basado en porcentaje
+    carruselContenedor.style.transform = `translateX(${desplazamiento}%)`;
 }
+
+// 📌 Funcionalidad táctil para deslizar el carrusel en móviles
+let startX = 0;
+let moveX = 0;
+
+carruselContenedor.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+});
+
+carruselContenedor.addEventListener("touchmove", (event) => {
+    moveX = event.touches[0].clientX;
+});
+
+carruselContenedor.addEventListener("touchend", () => {
+    if (startX > moveX + 50) {
+        moverCarrusel(1); // Desliza a la derecha
+    } else if (startX < moveX - 50) {
+        moverCarrusel(-1); // Desliza a la izquierda
+    }
+});
 
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
