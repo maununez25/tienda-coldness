@@ -164,6 +164,17 @@
 .carrusel {
     max-width: 100%;
     overflow: hidden; /* Evita desbordamiento */
+} 
+header img {
+    max-width: 100%; /* La imagen nunca será más grande que su contenedor */
+    height: auto; /* Mantiene la proporción correcta */
+    display: block; /* Evita espacios extra alrededor */
+    margin: auto; /* Centra la imagen */
+}
+@media (max-width: 768px) {
+    header img {
+        width: 90%; /* Reduce el tamaño en móviles */
+    }
 }
 
     </style>
