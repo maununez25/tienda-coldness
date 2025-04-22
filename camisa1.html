@@ -5,261 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COLDNESS</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-        }
-
-        header {
-            background-color: #82baf1;
-            color: black;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            padding: 10px;
-        }
-        .product {
-            background-color: #fff;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #82baf1;
-            align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a, nav ul li button {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        nav ul li a:hover, nav ul li button:hover {
-            background-color: #5db1e9;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #82baf1;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        h1 {
-            font-family: Arial;
-            color: white;
-            text-align: center;
-        }
-
-        .boton {
-            background-color: #2518da; /* Verde */
-            border: none;
-            color: #ffffff;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        .botonP {
-            background-color: #7f7f7f; 
-            border: none;
-            color: #ffffff;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        .carrito { 
-            border: 1px solid #ccc; 
-            padding: 10px; 
-            margin: 10px; 
-            display: none; /* Ocultar el carrito por defecto */ 
-            position: fixed; 
-            top: 0; 
-            right: 0; 
-            width: 300px; 
-            height: 100%; 
-            background-color: white; 
-            box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
-            overflow-y: auto; 
-            z-index: 2; /* Asegurar que el carrito esté por encima de otros elementos */ 
-        }
-
-        .carrito ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .carrito li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px; /* Añadir margen inferior para separar los elementos */
-        }
-
-        .boton-eliminar {
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-            margin-left: auto; /* Alinear el botón a la derecha */
-            margin-right: 10px; /* Añadir margen derecho para separar el botón del borde */
-        }
-
-        .boton-carrito {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .botonPI {
-    background-color: #c13584; /* Color característico de Instagram */
-    border: none;
-    color: white;
-    padding: 15px 32px;
+       /* 🌍 Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-} 
-#search-form { 
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 5px;
-    width: 250px;
-}
-nav {
-    display:flexbox;
-    justify-content: center; /* Centra los elementos */
-    align-items: center; /* Asegura alineación vertical */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-}
-#search-input {
-    border: none;
-    padding: 8px;
-    width: 200px;
-    outline: none;
-    align-items: center;
 }
 
-button {
+/* ✅ Ajustar imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 🛠️ Estilos de la barra de navegación */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #82baf1;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a, nav ul li button {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
-}
-      img {
-    max-width: 100%; /* Evita que la imagen sobresalga del contenedor */
-    height: auto; /* Mantiene la proporción correcta */
-    display: block; /* Elimina espacios extra alrededor de la imagen */
-}
-  .product {
-    max-width: 350px; /* Ajusta el tamaño del contenedor */
-    margin: 10px auto; /* Centra el producto */
-    overflow: hidden; /* Evita que los elementos internos sobresalgan */
 }
 
+nav ul li a:hover, nav ul li button:hover {
+    background-color: #5db1e9;
+}
+
+/* ✅ Menú hamburguesa */
+#menu-toggle {
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 🛒 Estilos del carrito */
+.carrito { 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    width: 300px; 
+    height: auto; 
+    background-color: white; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
+    overflow-y: auto; 
+    z-index: 2; 
+    display: none;
+}
+
+/* 📱 Estilos responsivos */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .product {
         max-width: 90%;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-.boton, .botonP, .botonPI {
-    background-color: #2518da; /* Color base */
-    border: none;
-    color: #ffffff;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* Botón de Instagram */
-.botonPI {
-    background-color: #c13584; /* Color característico de Instagram */
-}
-
-/* Botón de carrito */
-.boton-carrito {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Estilos responsivos para botones */
-@media (max-width: 768px) {
     .boton, .botonP, .botonPI {
-        width: 100%; /* Hacerlos más grandes en móviles */
+        width: 100%;
         font-size: 18px;
     }
 }
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Apila los productos en móviles */
-        align-items: center; /* Asegura el centrado */
-    }
 
-    .product {
-        max-width: 90%;
-    }
-}
-.container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en móviles */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-    gap: 20px; /* Espaciado entre elementos */
-    padding: 10px;
-}
 
     </style>
 </head>
