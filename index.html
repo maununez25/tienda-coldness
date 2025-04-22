@@ -206,6 +206,42 @@ button {
         height: auto;
     }
 }
+.boton, .botonP, .botonPI {
+    background-color: #2518da; /* Color base */
+    border: none;
+    color: #ffffff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Botón de Instagram */
+.botonPI {
+    background-color: #c13584; /* Color característico de Instagram */
+}
+
+/* Botón de carrito */
+.boton-carrito {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Estilos responsivos para botones */
+@media (max-width: 768px) {
+    .boton, .botonP, .botonPI {
+        width: 100%; /* Hacerlos más grandes en móviles */
+        font-size: 18px;
+    }
+}
 
     </style>
 </head>
