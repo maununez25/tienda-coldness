@@ -1,6 +1,150 @@
-    cursor: pointer;
-    font-size: 18px;
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLDNESS</title>
+    <style>
+       /* 🌍 Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
 }
+
+header {
+    background-color: #82baf1;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 🛠️ Estilos de la barra de navegación */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #82baf1;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a, nav ul li button {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover, nav ul li button:hover {
+    background-color: #5db1e9;
+}
+
+#menu-toggle {
+    display: none;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* 🛒 Estilos del carrito */
+.carrito { 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    width: 300px; 
+    height: 100%; 
+    background-color: white; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
+    overflow-y: auto; 
+    z-index: 2; 
+    display: none;
+}
+
+/* 🔍 Estilos de la barra de búsqueda */
+#search-form {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    width: 250px;
+    margin: auto;
+}
+
+#search-input {
+    border: none;
+    padding: 8px;
+    width: 200px;
+    outline: none;
+}
+
+/* 📱 Estilos responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        max-width: 90%;
+    }
+
+    #search-form {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 
     </style>
 </head>
