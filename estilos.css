@@ -657,6 +657,7 @@ html, body {
     width: 80px;
     font-size: 1rem;
     padding: 10px;
+    pointer-events: none;
   }
 
   .botones-flecha {
