@@ -37,11 +37,13 @@
         input[type="number"],
         input[type="submit"],
         select {
-            width: 430px;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: 100%;              /* Se adapta al ancho del contenedor */
+            max-width: 500px;         /* Evita que se extienda demasiado en pantallas grandes */
+             box-sizing: border-box;   /* Incluye padding y border en el ancho */
+             padding: 10px;
+             margin-bottom: 20px;
+             border: 1px solid #ccc;
+             border-radius: 5px;
         }
 
         input[type="submit"] {
