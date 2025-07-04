@@ -693,9 +693,13 @@ html, body {
   }
 
   select {
-    width: auto;
+    width: 120px;
     font-size: 1rem;
-    padding: 10px 18px;
+    padding: 10px;
+    appearance: none;        /* estándar */
+  -webkit-appearance: none; /* Safari */
+  -moz-appearance: none;   /* Firefox */
+ 
   }
 
   label {
