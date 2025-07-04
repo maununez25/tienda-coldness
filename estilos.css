@@ -23,7 +23,7 @@ header h1 {
   }
 header img {
     margin-top: 10px;
-    width: 400;
+    width: auto;
     border-radius: 12px;
     
   }
@@ -519,8 +519,8 @@ nav ul li button {
   }
 
   header img {
-    width: 200px; /* Aumenta el tamaño de forma equilibrada */
-    max-width: 100%;
+    width:auto; /* Aumenta el tamaño de forma equilibrada */
+    max-width: 90%;
     height: auto;
     margin-top: 12px;
   }
