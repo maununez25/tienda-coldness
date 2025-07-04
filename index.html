@@ -1,430 +1,527 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLDNESS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COLDNESS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background-color: #82baf1;
-            color: black;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            padding: 10px;
-        }
-        .product {
-            background-color: #fff;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #82baf1;
-            align-items: center; /* Asegura que todos los elementos estén alineados verticalmente */
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a, nav ul li button {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            display: block;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        nav ul li a:hover, nav ul li button:hover {
-            background-color: #5db1e9;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        footer {
-            background-color: #82baf1;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        h1 {
-            font-family: Arial;
-            color: white;
-            text-align: center;
-        }
-
-        .boton {
-            background-color: #2518da; /* Verde */
-            border: none;
-            color: #ffffff;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        .botonP {
-            background-color: #7f7f7f; 
-            border: none;
-            color: #ffffff;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        .carrito { 
-            border: 1px solid #ccc; 
-            padding: 10px; 
-            margin: 10px; 
-            display: none; /* Ocultar el carrito por defecto */ 
-            position: fixed; 
-            top: 0; 
-            right: 0; 
-            width: 300px; 
-            height: 100%; 
-            background-color: white; 
-            box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
-            overflow-y: auto; 
-            z-index: 2; /* Asegurar que el carrito esté por encima de otros elementos */ 
-        }
-
-        .carrito ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .carrito li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px; /* Añadir margen inferior para separar los elementos */
-        }
-
-        .boton-eliminar {
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            padding: 5px;
-            cursor: pointer;
-            margin-left: auto; /* Alinear el botón a la derecha */
-            margin-right: 10px; /* Añadir margen derecho para separar el botón del borde */
-        }
-
-        .boton-carrito {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .botonPI {
-    background-color: #c13584; /* Color característico de Instagram */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-} 
-#search-form { 
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 5px;
-    width: 250px;
-}
-nav {
-    display:flexbox;
-    justify-content: center; /* Centra los elementos */
-    align-items: center; /* Asegura alineación vertical */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
-}
-#search-input {
-    border: none;
-    padding: 8px;
-    width: 200px;
-    outline: none;
-    align-items: center;
-}
-
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-      img {
-    max-width: 100%; /* Evita que la imagen sobresalga del contenedor */
-    height: auto; /* Mantiene la proporción correcta */
-    display: block; /* Elimina espacios extra alrededor de la imagen */
-}
-  .product {
-    max-width: 350px; /* Ajusta el tamaño del contenedor */
-    margin: 10px auto; /* Centra el producto */
-    overflow: hidden; /* Evita que los elementos internos sobresalgan */
-}
-
-@media (max-width: 768px) {
-    .product {
-        max-width: 90%;
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f9ff;
+      color: #333;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
+    header {
+      background: linear-gradient(to right, #0b08ca, #7eb7f0);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      align-content: center;
     }
-}
-.boton, .botonP, .botonPI {
-    background-color: #2518da; /* Color base */
-    border: none;
-    color: #ffffff;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
-}
 
-/* Botón de Instagram */
-.botonPI {
-    background-color: #c13584; /* Color característico de Instagram */
-}
-
-/* Botón de carrito */
-.boton-carrito {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-/* Estilos responsivos para botones */
-@media (max-width: 768px) {
-    .boton, .botonP, .botonPI {
-        width: 100%; /* Hacerlos más grandes en móviles */
-        font-size: 18px;
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
-}
-@media (max-width: 768px) {
+
+    header img {
+      margin-top: 10px;
+      width: auto;
+      border-radius: 12px;
+      
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #7eb7f0;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a, nav ul li button {
+      background-color: #4c89cf;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+
+    nav ul li a:hover, nav ul li button:hover {
+      background-color: #276bb6;
+    }
+
+    #search-form {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 10px;
+      padding: 5px 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-top: 10px;
+      
+    }
+
+    #search-input {
+      border: none;
+      padding: 8px;
+      width: 300px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
     .container {
-        flex-direction: column; /* Apila los productos en móviles */
-        align-items: center; /* Asegura el centrado */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px 30px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .product {
-        max-width: 90%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
     }
-}
-.container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en móviles */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-    gap: 20px; /* Espaciado entre elementos */
-    padding: 10px;
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .product p {
+      margin: 10px 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .boton, .botonP, .botonPI, .botonagrecarr {
+      background-color: #4c89cf;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .boton:hover, .botonP:hover, .botonPI:hover, .botonagrecarr:hover {
+      background-color: #276bb6;
+      transform: scale(1.05);
+    }
+
+    #contacto {
+      padding: 30px;
+      text-align: center;
+    }
+
+    #contacto h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    #contacto a {
+      color: #0b08ca;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #0b08ca;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    .carrito {
+      border: 1px solid #ccc;
+      padding: 20px;
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      width: 320px;
+      max-height: 80vh;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      overflow-y: auto;
+      z-index: 999;
+      display: none;
+    }
+
+    .carrito h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .carrito ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .carrito li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .boton-eliminar {
+      background-color: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    .boton-carrito {
+  background-color: #4c89cf;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-    </style>
+.boton-carrito img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center; /* 💡 Esto asegura que todos estén alineados verticalmente */
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  header {
+    padding: 25px 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header img {
+    width: 150px;         /* ✅ Imagen más grande */
+    max-width: 90%;
+    height: auto;
+    margin-top: 12px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  #search-form {
+    width: 100%;
+    max-width: 90%;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  #search-input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .product {
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  .boton, .botonP, .botonPI, .botonagrecarr {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1rem;
+    padding: 12px 20px;
+    margin: 10px auto;
+  }
+
+  .carrito {
+    width: 90%;
+    left: 5%;
+    right: auto;
+    top: 15px;
+    padding: 15px;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  header img {
+    width: 440px;       /* Más grande pero aún proporcionado */
+    max-width: 90%;     /* Evita que se desborde */
+    height: auto;
+    margin-top: 12px;
+  }
+}
+
+
+</style>
 </head>
+
 <body>
-    <header>
-       <h1></h1>
-       <img src="coss.png">
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><button class="boton-carrito" onclick="toggleCarrito()"><img src="carro.png" width="25"></button></li>
-            <li></li>
-        </ul> <center>
-         <form id="search-form" onsubmit="buscarProducto(); return false;">
-            <input type="text" id="search-input" placeholder="Buscar productos..." autocomplete="off">
-            <button type="submit">🔍</button>
-        </form> </center>
-        
-    </nav>
-    <main>
-        <section id="inicio">
-            <h2>Inicio</h2>
-            <p>Explora nuestra colección de ropa de moda.</p>
-        </section>
-        <section id="productos">
-            <h2>Productos</h2>
-            <ul>
-                <div class="container">
-                    <div class="product" data-color="negro" data-precio="500" data-categoria="corazon , corazón">
-                        <h2>Eternity</h2>
-                        <center><img src="EterM1.jpeg" width="350" height="450"></center>
-                        <p>Camisa premium color negro.</p>
-                        <button class="boton" onclick="window.location.href='camisa1.html'">Ver Especificaciones</button>
-                    </div>
-                    
-                    
-                    <div class="product" data-color="azul" data-precio="500" data-categoria="espacio">
-                        <h2>Paradise</h2>
-                        <center><img src="ParaH1.jpeg" width="350" height="450"></center>
-                        <p>Descripción del producto 2.</p>
-                        <button class="boton" onclick="window.location.href='camisa2.html'">Ver Especificaciones</button>
-                    </div>
-                    <div class="product" data-color="blanca" data-precio="500" data-categoria="calavera ">
-                        <h2>Reality</h2>
-                        <center><img src="RealM1.jpeg" width="350" height="450"></center>
-                        <p>Descripción del producto 3.</p>
-                        <button class="boton" onclick="window.location.href='camisa3.html'">Ver Especificaciones</button>
-                    </div>
-                </div>
-            </ul>
-        </section>
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Puedes contactarnos en <a href="mailto:coldnessmx@gmail.com">coldnessmx@gmail.com</a></p>
-            <br>
-            <a href="https://www.instagram.com/coldness_mx?igsh=NXNwdWVrZngyeG1q" target="_blank">
-                <button class="botonPI">Visítanos en Instagram</button>
-            </a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p>
-    </footer>
-    <section id="carrito" class="carrito">
-        <h2>Carrito de Compras</h2>
-        <div>
-            <ul id="lista-carrito"></ul>
-            <p>Total: $<span id="total-carrito">0.00</span></p>
-            <button class="botonP" onclick="window.location.href='pago.html'">Pagar</button>
-        </div>
+  <header>
+    
+    <img src="coss.png"   >
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li>
+        <button class="boton-carrito" onclick="toggleCarrito()" >
+          <img src="carro.png" alt="Carrito" />
+        </button>
+      </li>
+      
+    </ul>
+
+    <form id="search-form" onsubmit="buscarProducto(); return false;">
+      <input type="text" id="search-input" placeholder="Buscar productos..." autocomplete="off" />
+      <button type="submit">🔍</button>
+    </form>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h2>Inicio</h2>
+      <p>Explora nuestra colección de ropa de moda.</p>
     </section>
-    <script>
-        let indice = 0;
-        const imagenes = document.querySelectorAll('.carrusel img');
-        function moverCarrusel(direccion) {
-            indice += direccion;
-            if (indice < 0) {
-                indice = imagenes.length - 1;
-            } else if (indice >= imagenes.length) {
-                indice = 0;
+
+    <section id="productos">
+      <h2>Productos</h2>
+      <div class="container">
+        <div class="product" data-color="negro" data-precio="450" data-categoria="corazon , corazón">
+          <h2>Eternity</h2>
+          <img src="EterM1.jpeg" alt="Eternity">
+          <p>Camisa premium color negro.</p>
+          <button class="boton" onclick="window.location.href='camisa1.html'">Ver Especificaciones</button>
+        </div>
+
+        <div class="product" data-color="azul" data-precio="450" data-categoria="espacio">
+          <h2>Paradise</h2>
+          <img src="ParaH1.jpeg" alt="Paradise">
+          <p>Descripción del producto 2.</p>
+          <button class="boton" onclick="window.location.href='camisa2.html'">Ver Especificaciones</button>
+        </div>
+
+        <div class="product" data-color="blanca" data-precio="450" data-categoria="calavera">
+          <h2>Reality</h2>
+          <img src="RealM1.jpeg" alt="Reality">
+          <p>Descripción del producto 3.</p>
+          <button class="boton" onclick="window.location.href='camisa3.html'">Ver Especificaciones</button>
+        </div>
+        <div class="product" data-color="blanca" data-precio="450" data-categoria="cara, oro, dorado ">
+            <h2>Reality</h2>
+            <img src="goldFace.jpeg" alt="MAGNIFICENT GOLD">
+            <p>Descripción del producto 4.</p>
+            <button class="boton" onclick="window.location.href='camisa4.html'">Ver Especificaciones</button>
+          </div>
+          <div class="product" data-color="negro" data-precio="450" data-categoria="cara, morado ">
+            <h2>Reality</h2>
+            <img src="wish.jpeg" alt="WISH YOU HERE">
+            <p>Descripción del producto 5.</p>
+            <button class="boton" onclick="window.location.href='camisa5.html'">Ver Especificaciones</button>
+          </div>
+          <div class="product" data-color="beige" data-precio="450" data-categoria="corazon, rojo ">
+            <h2>Reality</h2>
+            <img src="imagine.jpeg" alt="JUST IMAGINE">
+            <p>Descripción del producto 6.</p>
+            <button class="boton" onclick="window.location.href='camisa6.html'">Ver Especificaciones</button>
+          </div>
+          <div class="product" data-color="blanca" data-precio="450" data-categoria="pasamotañas ">
+            <h2>Reality</h2>
+            <img src="rebel.jpeg" alt="REBEL FASHION">
+            <p>Descripción del producto 7.</p>
+            <button class="boton" onclick="window.location.href='camisa7.html'">Ver Especificaciones</button>
+          </div>
+          <div class="product" data-color="negro" data-precio="750" data-categoria="cruz, piedras ">
+            <h2>Reality</h2>
+            <img src="cruzP.jpeg" alt="CRUZ PIEDRAS">
+            <p>Descripción del producto 8.</p>
+            <button class="boton" onclick="window.location.href='camisa8.html'">Ver Especificaciones</button>
+          </div>
+      </div>
+      
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Puedes contactarnos en <a href="mailto:coldnessmx@gmail.com">coldnessmx@gmail.com</p> 
+    <br> <a href="https://www.instagram.com/coldness_mx?igsh=NXNwdWVrZngyeG1q" target="_blank"> 
+        <button class="botonPI">Visítanos en Instagram</button> </a> </section> </main>
+
+      <footer> <p>&copy; 2025 Tienda de Ropa. Todos los derechos reservados.</p> </footer>
+      <section id="carrito" class="carrito"> <h2>Carrito de Compras</h2> <div>
+         <ul id="lista-carrito"></ul> <p>Total: $<span id="total-carrito">0.00</span></p> 
+         <button class="botonP" onclick="window.location.href='pago.html'">Pagar</button>
+         </div> </section>
+      
+         <script>
+            let indice = 0;
+            const imagenes = document.querySelectorAll('.carrusel img');
+            function moverCarrusel(direccion) {
+                indice += direccion;
+                if (indice < 0) {
+                    indice = imagenes.length - 1;
+                } else if (indice >= imagenes.length) {
+                    indice = 0;
+                }
+                const desplazamiento = -indice * 480;
+                imagenes.forEach(img => {
+                    img.style.transform = `translateX(${desplazamiento}px)`;
+                });
             }
-            const desplazamiento = -indice * 480;
-            imagenes.forEach(img => {
-                img.style.transform = `translateX(${desplazamiento}px)`;
-            });
-        }
-
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        function toggleCarrito() {
-            const carrito = document.getElementById('carrito');
-            carrito.style.display = carrito.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function agregarAlCarrito(producto, precio, tallaId, cantidadId) {
-            const talla = document.getElementById(tallaId).value;
-            const cantidad = parseInt(document.getElementById(cantidadId).value);
-            carrito.push({ producto, precio, talla, cantidad });
-            actualizarCarrito();
-            alert("Producto agregado al carrito");
-        }
-
-        function eliminarDelCarrito(indice) {
-            carrito.splice(indice, 1);
-            actualizarCarrito();
-        }
-
-        function actualizarCarrito() {
-            const listaCarrito = document.getElementById('lista-carrito');
-            const totalCarrito = document.getElementById('total-carrito');
-            listaCarrito.innerHTML = '';
-            let total = 0;
-            carrito.forEach((item, index) => {
-                const li = document.createElement('li');
-                li.textContent = `${item.producto} (Talla: ${item.talla}, Cantidad: ${item.cantidad}) - $${(item.precio * item.cantidad).toFixed(2)}`;
-                const botonEliminar = document.createElement('button');
-                botonEliminar.textContent = 'Eliminar';
-                botonEliminar.classList.add('boton-eliminar');
-                botonEliminar.onclick = () => eliminarDelCarrito(index);
-                li.appendChild(botonEliminar);
-                listaCarrito.appendChild(li);
-                total += item.precio * item.cantidad;
-            });
-            totalCarrito.textContent = total.toFixed(2);
-            localStorage.setItem('carrito', JSON.stringify(carrito)); // Guardar el carrito en localStorage
-        }
-
-        // Cargar el carrito desde localStorage al cargar la página
-        document.addEventListener('DOMContentLoaded', () => {
-            carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            actualizarCarrito();
-        });
-
-        // Ocultar el carrito al hacer clic fuera de él
-        document.addEventListener('click', function(event) {
-            const carrito = document.getElementById('carrito');
-            const botonCarrito = document.querySelector('.boton-carrito');
-            if (!carrito.contains(event.target) && !botonCarrito.contains(event.target)) {
-                carrito.style.display = 'none';
+    
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            function toggleCarrito() {
+                const carrito = document.getElementById('carrito');
+                carrito.style.display = carrito.style.display === 'none' ? 'block' : 'none';
             }
+    
+            function agregarAlCarrito(producto, precio, tallaId, cantidadId) {
+                const talla = document.getElementById(tallaId).value;
+                const cantidad = parseInt(document.getElementById(cantidadId).value);
+                carrito.push({ producto, precio, talla, cantidad });
+                actualizarCarrito();
+                alert("Producto agregado al carrito");
+            }
+    
+            function eliminarDelCarrito(indice) {
+                carrito.splice(indice, 1);
+                actualizarCarrito();
+            }
+    
+            function actualizarCarrito() {
+                const listaCarrito = document.getElementById('lista-carrito');
+                const totalCarrito = document.getElementById('total-carrito');
+                listaCarrito.innerHTML = '';
+                let total = 0;
+                carrito.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.producto} (Talla: ${item.talla}, Cantidad: ${item.cantidad}) - $${(item.precio * item.cantidad).toFixed(2)}`;
+                    const botonEliminar = document.createElement('button');
+                    botonEliminar.textContent = 'Eliminar';
+                    botonEliminar.classList.add('boton-eliminar');
+                    botonEliminar.onclick = () => eliminarDelCarrito(index);
+                    li.appendChild(botonEliminar);
+                    listaCarrito.appendChild(li);
+                    total += item.precio * item.cantidad;
+                });
+                totalCarrito.textContent = total.toFixed(2);
+                localStorage.setItem('carrito', JSON.stringify(carrito)); // Guardar el carrito en localStorage
+            }
+    
+            // Cargar el carrito desde localStorage al cargar la página
+            document.addEventListener('DOMContentLoaded', () => {
+                carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                actualizarCarrito();
+            });
+    
+            // Ocultar el carrito al hacer clic fuera de él
+            document.addEventListener('click', function(event) {
+                const carrito = document.getElementById('carrito');
+                const botonCarrito = document.querySelector('.boton-carrito');
+                if (!carrito.contains(event.target) && !botonCarrito.contains(event.target)) {
+                    carrito.style.display = 'none';
+                }
+            });
+            //barra 
+            function buscarProducto() {
+        let input = document.getElementById("search-input").value.toLowerCase();
+        let productos = document.querySelectorAll(".product");
+    
+        productos.forEach(producto => {
+            let nombreProducto = producto.querySelector("h2").innerText.toLowerCase();
+            let descripcionProducto = producto.querySelector("p").innerText.toLowerCase();
+            let colorProducto = producto.getAttribute("data-color") || "";
+            let categoriaProducto = producto.getAttribute("data-categoria") || "";
+            let precioProducto = producto.getAttribute("data-precio") || "";
+    
+            let coincide = nombreProducto.includes(input) || 
+                           descripcionProducto.includes(input) || 
+                           colorProducto.includes(input) || 
+                           categoriaProducto.includes(input) || 
+                           precioProducto.includes(input);
+    
+            producto.style.display = coincide ? "block" : "none";
         });
-        //barra 
-        function buscarProducto() {
-    let input = document.getElementById("search-input").value.toLowerCase();
-    let productos = document.querySelectorAll(".product");
-
-    productos.forEach(producto => {
-        let nombreProducto = producto.querySelector("h2").innerText.toLowerCase();
-        let descripcionProducto = producto.querySelector("p").innerText.toLowerCase();
-        let colorProducto = producto.getAttribute("data-color") || "";
-        let categoriaProducto = producto.getAttribute("data-categoria") || "";
-        let precioProducto = producto.getAttribute("data-precio") || "";
-
-        let coincide = nombreProducto.includes(input) || 
-                       descripcionProducto.includes(input) || 
-                       colorProducto.includes(input) || 
-                       categoriaProducto.includes(input) || 
-                       precioProducto.includes(input);
-
-        producto.style.display = coincide ? "block" : "none";
-    });
-}
-
-    </script>
-</body>
-</html>
+    }
+    
+        </script>
