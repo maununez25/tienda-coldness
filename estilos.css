@@ -372,19 +372,13 @@ nav ul li button {
   border: none;
 }
 
-  @media (max-width: 768px) {
-    nav ul li a,
-nav ul li button {
-  padding: 5px 8px;
-  font-size: 0.85rem;
-}
+@media (max-width: 768px) {
     body {
       font-size: 1rem;
-      padding: 0;
     }
   
     header {
-      padding: 20px 10px;
+      padding: 20px 15px;
     }
   
     header h1 {
@@ -392,85 +386,65 @@ nav ul li button {
     }
   
     header img {
-      max-width: 80px;
+        width: 160px;         /* Aumenta el tamaño de forma equilibrada */
+        max-width: 85%;
+        height: auto;
+        margin-top: 12px;
+      }
+      
+  
+    nav {
+      flex-wrap: wrap;
+      padding: 10px 15px;
     }
   
     nav ul {
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      padding: 10px;
+      gap: 8px;
+    }
+  
+    nav ul li a,
+    nav ul li button {
+      padding: 6px 10px;         /* Menú más compacto */
+      font-size: 0.85rem;
+      border-radius: 8px;
+      font-weight: 500;
     }
   
     #search-form {
       width: 100%;
       max-width: 90%;
-      margin: 10px auto 0;
-      flex-wrap: wrap;
+      margin-top: 10px;
       justify-content: center;
+      flex-wrap: wrap;
     }
   
     #search-input {
-      width: 100%;
+      width: 90%;
       font-size: 1rem;
-      margin-bottom: 5px;
-    }
-  
-    .carrusel {
-      width: 100%;
-      max-width: 480px;
-    }
-  
-    .carrusel img {
-      width: 100%;
-      height: auto;
+      margin-bottom: 6px;
     }
   
     .container {
-      padding: 20px 10px;
+      padding: 20px;
     }
   
-    .product, .producto {
+    .product {
       margin: 10px auto;
       width: 90%;
     }
   
-    .product h2, .producto h2 {
-      font-size: 1.4rem;
+    .product h2 {
+      font-size: 1.3rem;
     }
   
     .boton, .botonP, .botonPI, .botonagrecarr {
-      font-size: 1rem;
-      padding: 12px 16px;
       width: 100%;
-      max-width: 300px;
-      margin: 10px auto;
-    }
-  
-    .control-cantidad {
-      max-width: 100%;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .grupo-cantidad {
-      gap: 8px;
-    }
-  
-    select, input[type="number"] {
+      max-width: 280px;
       font-size: 1rem;
-      width: 100px;
-    }
-  
-    .botones-flecha {
-      flex-direction: column;
-      gap: 4px;
-    }
-  
-    footer {
-      font-size: 0.9rem;
-      padding: 15px;
+      padding: 12px 20px;
+      margin: 10px auto;
     }
   
     .carrito {
@@ -480,14 +454,57 @@ nav ul li button {
       top: 15px;
       padding: 15px;
     }
-  }
   
-  @media (max-width: 768px) {
-    header img {
-      width: 440px;       /* Más grande pero aún proporcionado */
-      max-width: 90%;     /* Evita que se desborde */
-      height: auto;
-      margin-top: 12px;
+    .control-cantidad {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 100%;
+      padding: 10px;
+    }
+  
+    .control-cantidad label {
+      font-size: 0.95rem;
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  
+    select {
+      width: 100px;
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .grupo-cantidad {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  
+    input[type="number"] {
+      width: 80px;
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .botones-flecha {
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+  
+    .boton-flecha {
+      width: 24px;
+      height: 24px;
+      font-size: 0.8rem;
+      line-height: 24px;
+    }
+  
+    footer {
+      padding: 15px;
+      font-size: 0.9rem;
     }
   }
   
