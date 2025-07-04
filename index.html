@@ -248,6 +248,11 @@ nav ul {
   padding: 0;
 }
 @media (max-width: 768px) {
+    nav ul li a,
+nav ul li button {
+  padding: 5px 8px;
+  font-size: 0.85rem;
+}
   body {
     font-size: 1rem;
   }
@@ -264,7 +269,7 @@ nav ul {
     width: 150px;         /* ✅ Imagen más grande */
     max-width: 90%;
     height: auto;
-    margin-top: 8px;
+    margin-top: 12px;
   }
 
   nav {
@@ -328,6 +333,19 @@ nav ul {
     margin-top: 12px;
   }
 }
+nav ul li a,
+nav ul li button {
+  background-color: #4c89cf;
+  color: white;
+  padding: 6px 10px;         /* antes 8px 14px */
+  border-radius: 8px;        /* antes 10px */
+  font-weight: 500;          /* antes 600 */
+  font-size: 0.9rem;         /* antes 1rem */
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
 
 
 </style>
