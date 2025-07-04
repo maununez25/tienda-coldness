@@ -505,11 +505,37 @@ nav ul li button {
   transition: background-color 0.3s ease;
   border: none;
 }
+
+* {  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* CARRUSEL */
+.carrusel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carrusel img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
 @media (max-width: 768px) {
   body {
     font-size: 1rem;
   }
-
+  .carrusel img {
+    width: 100%;
+  }
+  .carrusel {
+    overflow: hidden;
+  }
   header {
     padding: 20px 15px;
   }
@@ -519,11 +545,13 @@ nav ul li button {
   }
 
   header img {
-    width:auto; /* Aumenta el tamaño de forma equilibrada */
+    width: auto;         /* ✅ Imagen más grande */
     max-width: 90%;
     height: auto;
     margin-top: 12px;
   }
+
+  
 
   nav {
     flex-wrap: wrap;
@@ -688,5 +716,3 @@ nav ul li button {
   
 }
 
-
-  
